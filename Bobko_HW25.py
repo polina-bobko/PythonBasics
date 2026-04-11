@@ -11,8 +11,6 @@ except ZeroDivisionError:
     print("Деление на ноль невозможно.")
 except ValueError:
     print("Введено некорректное число.")
-except TypeError:
-    print("Передан некорректный тип данных.")
 except Exception:
     print("Произошла непредвиденная ошибка.")
 
