@@ -1,5 +1,12 @@
 # task 1 - Деление без ошибок
-def division(dividend, divisor):
+def division(dividend: float, divisor: float) -> float:
+    """
+    Выполняет деление двух чисел.
+
+    :param dividend: Делимое типа float.
+    :param divisor: Делитель типа float.
+    :return: Результат деления dividend на divisor типа float.
+    """
     return dividend / divisor
 
 try:
@@ -23,7 +30,14 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(filename)s - %(lineno)d - %(message)s"
 )
 
-def division(dividend, divisor):
+def division(dividend: float, divisor: float) -> float:
+    """
+    Выполняет деление двух чисел.
+
+    :param dividend: Делимое типа float.
+    :param divisor: Делитель типа float.
+    :return: Результат деления dividend на divisor типа float.
+    """
     return dividend / divisor
 
 try:
