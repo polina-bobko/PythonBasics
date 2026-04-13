@@ -8,14 +8,13 @@ orders = [
     {"product": "Desk", "price": 400}
 ]
 
-# Отбирает заказы дороже 500.
-# Создаёт список названий отобранных продуктов в алфавитном порядке.
-# Возвращает итоговый список названий.
+def get_selected_orders(orders_list: list, min_price: int = 500) -> list:
+    filtered = filter(lambda order: order["price"] > min_price, orders_list)
+    products = map(lambda order: order["product"], filtered)
+    return sorted(products)
 
-def get_selected_orders(orders_list: list) -> list:
-    filtered = list(filter(lambda x: x["price"] > 500, orders_list))
-    return sorted(map(lambda x: x["product"], filtered))
 tasks = get_selected_orders(orders)
+# tasks = get_selected_orders(orders, 1000)
 print(tasks)
 
 # task2
