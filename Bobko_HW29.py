@@ -1,7 +1,7 @@
 # task1 - Генератор Фибоначчи
 from typing import Generator
 
-def fibonacci(a: int=0, b: int=1) -> Generator[int]:
+def fibonacci(a: int=0, b: int=1) -> Generator[int, None, None]:
     """
     Генератор, который генерирует последовательность Фибоначчи бесконечно,
     возвращая по одному числу за раз.
