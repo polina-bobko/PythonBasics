@@ -70,10 +70,9 @@ class User:
 
 
 try:
-    user1 = User("Alice", "string")
+    user1 = User("alice", "secret")
     print(user1)
-
-    user2 = User("Bob", "qwe")
+    user2 = User("bob","qwe")
     print(user2)
 
 except ValueError as error:
