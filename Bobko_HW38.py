@@ -1,6 +1,4 @@
 # task 1 - Банковский счёт
-# task 1 - Банковский счёт
-
 class BankAccount:
     def __init__(self, owner: str, balance: float = 0) -> None:
         """
