@@ -28,37 +28,37 @@ class BankAccount:
 
         self.__balance = float(value)
 
-    def deposit(self, amount: float) -> float | str:
+    def deposit(self, amount: float) -> float:
         """
         Пополнение счёта.
 
         :param amount: Сумма пополнения
-        :return: Новый баланс или сообщение об ошибке
+        :return: Новый баланс
         """
         if not isinstance(amount, (int, float)):
-            return "Error: Amount must be int or float."
+            raise TypeError("Amount must be int or float.")
 
         if amount <= 0:
-            return "Error: Amount must be positive."
+            raise ValueError("Amount must be positive.")
 
         self.__balance += amount
         return self.__balance
 
-    def withdraw(self, amount: float) -> float | str:
+    def withdraw(self, amount: float) -> float:
         """
         Снятие средств.
 
         :param amount: Сумма снятия
-        :return: Новый баланс или сообщение об ошибке
+        :return: Новый баланс
         """
         if not isinstance(amount, (int, float)):
-            return "Error: Amount must be int or float."
+            raise TypeError("Amount must be int or float.")
 
         if amount <= 0:
-            return "Error: Amount must be positive."
+            raise ValueError("Amount must be positive.")
 
         if amount > self.__balance:
-            return "Error: Not enough funds."
+            raise ValueError("Not enough funds.")
 
         self.__balance -= amount
         return self.__balance
@@ -105,27 +105,39 @@ class BankAccount:
     def history(self) -> list[str]:
         return self.__history.copy()
 
-    def deposit(self, amount: float) -> float | str:
+    def deposit(self, amount: float) -> float:
+        """
+        Пополнение счёта.
+
+        :param amount: Сумма пополнения
+        :return: Новый баланс
+        """
         if not isinstance(amount, (int, float)):
-            return "Error: Amount must be int or float."
+            raise TypeError("Error: Amount must be int or float.")
 
         if amount <= 0:
-            return "Error: Amount must be positive."
+            raise ValueError("Error: Amount must be positive.")
 
         self.__balance += amount
         self.__history.append(f"Deposit: {amount}")
 
         return self.__balance
 
-    def withdraw(self, amount: float) -> float | str:
+    def withdraw(self, amount: float) -> float:
+        """
+        Снятие средств.
+
+        :param amount: Сумма снятия
+        :return: Новый баланс
+        """
         if not isinstance(amount, (int, float)):
-            return "Error: Amount must be int or float."
+            raise TypeError("Error: Amount must be int or float.")
 
         if amount <= 0:
-            return "Error: Amount must be positive."
+            raise ValueError("Error: Amount must be positive.")
 
         if amount > self.__balance:
-            return "Error: Not enough funds."
+            raise ValueError("Error: Not enough funds.")
 
         self.__balance -= amount
         self.__history.append(f"Withdraw: {amount}")
